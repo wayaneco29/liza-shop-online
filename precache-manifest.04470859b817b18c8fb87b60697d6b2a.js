@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b26fc7ea06d95c966fb3afa441bdeb60",
+    "revision": "4fbe00de0304e35a4714e98258659a62",
     "url": "/liza-shop-online/index.html"
   },
   {
-    "revision": "952a4d14c8f67abec7c3",
+    "revision": "eb3d317afb008d86af2c",
     "url": "/liza-shop-online/static/css/main.d980463a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/liza-shop-online/static/js/2.d1f68066.chunk.js"
   },
   {
-    "revision": "952a4d14c8f67abec7c3",
-    "url": "/liza-shop-online/static/js/main.81b1747b.chunk.js"
+    "revision": "eb3d317afb008d86af2c",
+    "url": "/liza-shop-online/static/js/main.2267d43b.chunk.js"
   },
   {
     "revision": "539eb859dc8769df656b",
