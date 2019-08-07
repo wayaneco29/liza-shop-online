@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/liza-shop-online/static/css/main.d980463a.chunk.css",
+    "main.js": "/liza-shop-online/static/js/main.5686c625.chunk.js",
+    "main.js.map": "/liza-shop-online/static/js/main.5686c625.chunk.js.map",
+    "runtime~main.js": "/liza-shop-online/static/js/runtime~main.3bd2ec69.js",
+    "runtime~main.js.map": "/liza-shop-online/static/js/runtime~main.3bd2ec69.js.map",
+    "static/js/2.d1f68066.chunk.js": "/liza-shop-online/static/js/2.d1f68066.chunk.js",
+    "static/js/2.d1f68066.chunk.js.map": "/liza-shop-online/static/js/2.d1f68066.chunk.js.map",
+    "index.html": "/liza-shop-online/index.html",
+    "precache-manifest.6421bca561e3cec04294822e922b4373.js": "/liza-shop-online/precache-manifest.6421bca561e3cec04294822e922b4373.js",
+    "service-worker.js": "/liza-shop-online/service-worker.js",
+    "static/css/main.d980463a.chunk.css.map": "/liza-shop-online/static/css/main.d980463a.chunk.css.map"
+  }
+}
