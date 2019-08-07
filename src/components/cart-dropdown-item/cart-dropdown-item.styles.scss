@@ -1,0 +1,38 @@
+.cart-dropdown-item {
+    width: 100%;
+    height: 155px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px;
+    margin: 10px 0px;
+    position: relative;
+
+    &::after {
+        content: '';
+    position: absolute;
+    width: 84%;
+    left: 15px;
+    bottom: -1px;
+    background: rebeccapurple;
+    height: 2px;
+    }
+
+    .dropdown-image {
+        width: 100px;
+        height: 130px;
+    }
+
+    .content-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            color: #000;
+        }
+    }
+}

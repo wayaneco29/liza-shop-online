@@ -1,0 +1,35 @@
+.checkout-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+
+    .checkout-image-container,
+    .checkout-name {
+        width: 25%;
+
+        .checkout-image {
+            width: 92%;
+            height: 100%;
+        }
+    }
+    
+    .checkout-price,
+    .checkout-quantity {
+        width: 21%;
+    }
+
+    .checkout-remove {
+        width: 8%;
+        text-align: center;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        bottom: -10px;
+    }
+}

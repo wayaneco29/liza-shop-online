@@ -1,0 +1,49 @@
+.directory-menu {
+    overflow: hidden;
+    position: relative;
+    margin: 40px 0px;
+    
+    .directory-image {
+    min-width: 30%;
+    height: 240px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1000ms ease;
+    }
+
+    .title-container {
+        width: 150px;
+        height: 100px;
+        position: absolute;
+        color: #eee;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -75px;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        background: rgba(255,255,255,0.6);
+        cursor: pointer;
+
+        .directory-title {
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+    }
+    &:hover {
+        .directory-image {
+            transform: scale(1.1);
+        }
+    }
+}

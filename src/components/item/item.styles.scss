@@ -1,0 +1,33 @@
+.item {
+    width: 250px;
+    height: 350px;
+    margin: 15px 0px;
+    position: relative;
+
+    &:hover {
+        .item-image {
+            opacity: 0.8;
+        }
+
+        .item-button {
+            display: flex;
+        }
+    }
+
+    .item-image {
+        width: 100%;
+        height: 90%;
+        transition: opacity 300ms ease;
+    }
+
+    .description-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .item-button {
+        display: none;
+        text-transform: uppercase;
+        transition: background 300ms ease;
+    }
+}

@@ -1,46 +1,71 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { CardList } from './components/card-list/card-list.component'
-import { Search } from './components/search/search.component';
+import { auth, createUser } from './firebase/firebase.utils';
+import { setCurrentUser } from './redux/user/user.action';
+
+import NavigationBar from './components/navigation/navigation.component';
+import HomePage from './pages/homepage/homepage.component';
+import Collection from './components/collection/collection.component';
+import About from './components/about/about.component';
+import CollectionPage from './pages/collection/collection.component';
+import Checkout from './components/checkout/checkout.component';
+import Footer from './components/footer/footer.component';
 
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      monster: [],
-      searchField: ''
-    }
-  }
+
+
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(user => this.setState({ monster: user }))
+
+    const { setCurrentUser } = this.props;
+
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+
+        const userRef = await createUser(userAuth);
+
+        userRef.onSnapshot(snapshot => {
+          setCurrentUser({
+            id: snapshot.id,
+            ...snapshot.data()
+          })
+        })
+      }
+
+      return setCurrentUser(userAuth);
+    })
   }
 
-  eventHandler = (event) => {
-    this.setState({ searchField: event.target.value })
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
   }
 
   render() {
-    const { monster, searchField } = this.state;
-    const filteredmonsters = monster.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
-    )
     return (
       <div className="App">
-        <h1 className="title">Monster Rolodex</h1>
-        <Search
-          placeholder="Search Monsters ..."
-          eventHandler={this.eventHandler}
-        />
-        <CardList monster={filteredmonsters}>
-        </CardList>
+        <NavigationBar />
+        <div className="container">
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/shop' component={Collection} />
+            <Route path='/shop/:collectionId' component={CollectionPage} />
+            <Route path='/about' component={About} />
+            <Route path='/checkout' component={Checkout} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     )
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: userAuth => dispatch(setCurrentUser(userAuth))
+})
+
+export default connect(null, mapDispatchToProps)(App);
