@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/liza-shop-online/precache-manifest.5b8fa9fccbb64429c588c0943a38a7db.js"
+  "/liza-shop-online/precache-manifest.0e5a87b330db107277f77209bb5926aa.js"
 );
 
 self.addEventListener('message', (event) => {
