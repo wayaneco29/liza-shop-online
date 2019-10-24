@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { auth, createUser } from './firebase/firebase.utils';
+import { auth, firestore, createUser, getAllCartItems } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.action';
+import { addItem } from './redux/cart-items/cart-items.actions';
 
 import NavigationBar from './components/navigation/navigation.component';
 import HomePage from './pages/homepage/homepage.component';
@@ -22,11 +23,19 @@ class App extends Component {
 
   componentDidMount() {
 
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, addItem } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
-
+        const cartItemsSnapshot = await getAllCartItems(userAuth.uid);
+        cartItemsSnapshot.onSnapshot(async(snapshot) => {
+          // const data = snapshot.docs.map(snapshot => snapshot.data())
+          const req1 = await firestore.collection(`users/${userAuth.uid}/cartItems`);
+          const req2 = await req1.get()
+          const data1 = await req2.docs.map( data => data.data())
+          console.log(data1)
+          addItem(data1)
+        })
         const userRef = await createUser(userAuth);
 
         userRef.onSnapshot(snapshot => {
@@ -65,7 +74,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: userAuth => dispatch(setCurrentUser(userAuth))
+  setCurrentUser: userAuth => dispatch(setCurrentUser(userAuth)),
+  addItem: item => dispatch(addItem(item))
 })
 
 export default connect(null, mapDispatchToProps)(App);

@@ -17,7 +17,7 @@ const cartItem = (state = INITIAL_STATE, action) => {
         case CART_ITEM_ACTION_KEYWORD.ADD_ITEM:
             return {
                 ...state,
-                cartItem: collectItemRedandant(state.cartItem, action.payload)
+                cartItem: action.payload
             }
         default:
             return state;

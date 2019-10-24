@@ -13,6 +13,7 @@ import './checkout.styles.scss';
 
 const Checkout = ({ cartItems, totalPrice }) => (
     <div className="checkout">
+        <div className="checkout-inner">
         <div className="title-block">
             <div className="product"> Product </div>
             <div className="name"> Name </div>
@@ -22,7 +23,7 @@ const Checkout = ({ cartItems, totalPrice }) => (
         </div>
         {
             cartItems.length ? cartItems.map(cartItem => (
-                <CheckoutItem key={cartItem.id} {...cartItem} />
+                <CheckoutItem key={cartItem.id} item={cartItem}/>
             )) :
                 <h2 className="no-items">NO ITEMS</h2>
         }
@@ -39,6 +40,7 @@ const Checkout = ({ cartItems, totalPrice }) => (
         </p>
         <div className="stripe">
             <StripeCheckoutButton total={totalPrice} />
+        </div>
         </div>
     </div>
 )

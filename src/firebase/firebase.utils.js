@@ -47,3 +47,36 @@ export const createUser = async userAuth => {
 
     return userRef;
 }
+
+export const addCartItems = async (userId, item) => {
+    try {
+        const cartItemsRef = await firestore.doc(`users/${userId}/cartItems/${item.name.replace(/ +/g, "")}`);
+        const snapShot = await cartItemsRef.get();
+        if(!snapShot.exists) {
+            await cartItemsRef.set({
+                quantity: 1,
+                ...item
+            })
+            return console.log("Successfully added !")
+        }
+        const { quantity, price } = snapShot.data();
+        const newQuantity = quantity + 1;
+        const origPrice = price/quantity
+        cartItemsRef.set({
+            quantity: newQuantity,
+            price: origPrice * newQuantity
+        },{ merge: true })
+
+    } catch(err) {
+        return console.log(err.message)
+    }
+}
+
+export const getAllCartItems = async (userId) => {
+    try {
+        const collectionRef = await firestore.collection(`users/${userId}/cartItems`);
+        return collectionRef;
+    } catch(err) {
+        return console.log(err.message)
+    }
+}
