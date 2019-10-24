@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/liza-shop-online/static/css/main.2f5cb374.chunk.css",
-    "main.js": "/liza-shop-online/static/js/main.c492f147.chunk.js",
-    "main.js.map": "/liza-shop-online/static/js/main.c492f147.chunk.js.map",
+    "main.css": "/liza-shop-online/static/css/main.d511c76e.chunk.css",
+    "main.js": "/liza-shop-online/static/js/main.4eebe9ec.chunk.js",
+    "main.js.map": "/liza-shop-online/static/js/main.4eebe9ec.chunk.js.map",
     "runtime~main.js": "/liza-shop-online/static/js/runtime~main.3bd2ec69.js",
     "runtime~main.js.map": "/liza-shop-online/static/js/runtime~main.3bd2ec69.js.map",
-    "static/js/2.e230b98c.chunk.js": "/liza-shop-online/static/js/2.e230b98c.chunk.js",
-    "static/js/2.e230b98c.chunk.js.map": "/liza-shop-online/static/js/2.e230b98c.chunk.js.map",
+    "static/js/2.21d28ed1.chunk.js": "/liza-shop-online/static/js/2.21d28ed1.chunk.js",
+    "static/js/2.21d28ed1.chunk.js.map": "/liza-shop-online/static/js/2.21d28ed1.chunk.js.map",
     "index.html": "/liza-shop-online/index.html",
-    "precache-manifest.0e5a87b330db107277f77209bb5926aa.js": "/liza-shop-online/precache-manifest.0e5a87b330db107277f77209bb5926aa.js",
+    "precache-manifest.5d02425b7f0d703a325d9256c6a73db4.js": "/liza-shop-online/precache-manifest.5d02425b7f0d703a325d9256c6a73db4.js",
     "service-worker.js": "/liza-shop-online/service-worker.js",
-    "static/css/main.2f5cb374.chunk.css.map": "/liza-shop-online/static/css/main.2f5cb374.chunk.css.map"
+    "static/css/main.d511c76e.chunk.css.map": "/liza-shop-online/static/css/main.d511c76e.chunk.css.map"
   }
 }
